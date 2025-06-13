@@ -1,67 +1,58 @@
+import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import "./App.css";
+import About from "./pages/About";
+import Contact from "./pages/Contact";
+import { LanguageProvider } from "./context/LanguageContext";
+import LanguageSwitch from "./components/LanguageSwitch";
+import { useTranslation } from "./hooks/useTranslation";
 
-function App() {
+function Home() {
+  const { t } = useTranslation();
+  
   return (
-    <div className="App">
-      {/* Header */}
-      <header className="header">
-        <div className="logo">Glamour Salon</div>
-        <nav className="nav-links">
-          <a href="#">Work</a>
-          <a href="#">About</a>
-          <a href="#">Contact</a>
-        </nav>
-
-        <div className="burger" aria-label="Open menu">
-          <span></span>
-          <span></span>
-          <span></span>
-        </div>
-      </header>
-
+    <>
       {/* Hero Section */}
       <section className="big-title">
         <h2 className="big-heading">
-          Glamour Saloon <br />
-          <span className="italic">Göteborg</span>
+          {t('home.hero.title')} <br />
+          <span className="italic">{t('home.hero.subtitle')}</span>
         </h2>
 
         <div>
           <p className="big-text">
-            Experience luxury, style, and the perfect look crafted just for you.
+            {t('home.hero.description')}
           </p>
           <p>
-            We are the best saloon for your favourite hairstyles and hair
-            services. We give you the personal touch you are looking for.
+            {t('home.hero.subDescription')}
           </p>
 
-          <a className="btn big-cta" href="#">
-            Contact Us
-            <svg fill="none" viewBox="0 0 24 24" stroke-width="2">
+          <Link to="https://www.bokadirekt.se/places/bebosh-barbershop-59276" className="btn big-cta book-btn">
+            {t('home.hero.cta')}
+            <svg fill="none" viewBox="0 0 24 24" strokeWidth="2">
               <path d="M5 12h14M13 5l7 7-7 7" />
             </svg>
-          </a>
+          </Link>
         </div>
       </section>
 
       <section className="hero-grid">
         <img
-          src="https://i.pinimg.com/736x/dd/21/db/dd21db91c8e5c5f96c9d9feee3d1e66b.jpg"
+          src="https://i.pinimg.com/736x/1a/8a/d8/1a8ad8a81299dd60695edcd51aa0e592.jpg"
           alt=""
         />
         <img
-          src="https://i.pinimg.com/736x/56/f4/5a/56f45a02f7d6141d35226f7544336b25.jpg"
+          src="https://i.pinimg.com/736x/ab/60/cc/ab60ccd32db97868ec277f72ec47d78d.jpg"
           alt=""
         />
         <img
-          src="https://i.pinimg.com/736x/1a/74/a4/1a74a429bb63d1b0b1a712cef7e289a9.jpg"
+          src="https://i.pinimg.com/736x/e3/cb/60/e3cb60146e6202434a9e78952c2cea30.jpg"
           alt=""
         />
       </section>
 
       {/* Social Media Banner */}
       <section className="social-banner">
-        <h2>Follow Us</h2>
+        <h2>{t('home.social.title')}</h2>
         <div className="social-links">
           <a
             href="https://instagram.com"
@@ -86,15 +77,48 @@ function App() {
           </a>
         </div>
       </section>
+    </>
+  );
+}
 
-      {/* Contact Section */}
-      <section className="contact" id="contact">
-        <h2>Contact Us</h2>
-        <p>Email: contact@glamoursalon.com</p>
-        <p>Phone: +1 234 567 890</p>
-        <p>Address: 123 Main Street, Cityville</p>
-      </section>
-    </div>
+function AppContent() {
+  const { t } = useTranslation();
+
+  return (
+    <Router>
+      <div className="App">
+        {/* Header */}
+        <header className="header">
+          <nav className="nav-links">
+            <Link to="/">{t('nav.home')}</Link>
+            <Link to="/about">{t('nav.about')}</Link>
+            <Link to="/contact">{t('nav.contact')}</Link>
+          </nav>
+
+          <div className="logo">
+            <Link to="/">{t('home.hero.title')}</Link>
+          </div>
+
+          <div className="language-switch">
+            <LanguageSwitch />
+          </div>
+        </header>
+
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/contact" element={<Contact />} />
+        </Routes>
+      </div>
+    </Router>
+  );
+}
+
+function App() {
+  return (
+    <LanguageProvider>
+      <AppContent />
+    </LanguageProvider>
   );
 }
 
