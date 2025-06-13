@@ -1,10 +1,10 @@
-import { useState } from "react";
+//import { useState } from "react";
 import { useTranslation } from "../hooks/useTranslation";
-import emailjs from "@emailjs/browser";
+//import emailjs from "@emailjs/browser";
 
 const Contact = () => {
   const { t } = useTranslation();
-  const [formData, setFormData] = useState({
+/*  const [formData, setFormData] = useState({
     name: "",
     email: "",
     message: "",
@@ -80,7 +80,7 @@ const Contact = () => {
       [name]: value,
     }));
     if (error) setError(null);
-  };
+  }; */
 
   return (
     <div className="contact-page">
