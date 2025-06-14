@@ -5,29 +5,31 @@ import Contact from "./pages/Contact";
 import { LanguageProvider } from "./context/LanguageContext";
 import LanguageSwitch from "./components/LanguageSwitch";
 import { useTranslation } from "./hooks/useTranslation";
+import { useState } from "react";
+
+// Inside AppContent or your Header component:
 
 function Home() {
   const { t } = useTranslation();
-  
+
   return (
     <>
       {/* Hero Section */}
       <section className="big-title">
         <h2 className="big-heading">
-          {t('home.hero.title')} <br />
-          <span className="italic">{t('home.hero.subtitle')}</span>
+          {t("home.hero.title")} <br />
+          <span className="italic">{t("home.hero.subtitle")}</span>
         </h2>
 
         <div>
-          <p className="big-text">
-            {t('home.hero.description')}
-          </p>
-          <p>
-            {t('home.hero.subDescription')}
-          </p>
+          <p className="big-text">{t("home.hero.description")}</p>
+          <p>{t("home.hero.subDescription")}</p>
 
-          <Link to="https://www.bokadirekt.se/places/bebosh-barbershop-59276" className="btn big-cta book-btn">
-            {t('home.hero.cta')}
+          <Link
+            to="https://www.bokadirekt.se/places/bebosh-barbershop-59276"
+            className="btn big-cta book-btn"
+          >
+            {t("home.hero.cta")}
             <svg fill="none" viewBox="0 0 24 24" strokeWidth="2">
               <path d="M5 12h14M13 5l7 7-7 7" />
             </svg>
@@ -52,7 +54,7 @@ function Home() {
 
       {/* Social Media Banner */}
       <section className="social-banner">
-        <h2>{t('home.social.title')}</h2>
+        <h2>{t("home.social.title")}</h2>
         <div className="social-links">
           <a
             href="https://instagram.com"
@@ -83,23 +85,34 @@ function Home() {
 
 function AppContent() {
   const { t } = useTranslation();
+  const [mobileOpen, setMobileOpen] = useState(false);
 
   return (
     <Router basename="/bebosh-salon/">
       <div className="App">
         {/* Header */}
         <header className="header">
-          <nav className="nav-links">
-            <Link to="/">{t('nav.home')}</Link>
-            <Link to="/about">{t('nav.about')}</Link>
-            <Link to="/contact">{t('nav.contact')}</Link>
+          <button
+            className="mobile-menu-btn"
+            onClick={() => setMobileOpen(!mobileOpen)}
+          >
+            <span className={`hamburger ${mobileOpen ? "open" : ""}`}></span>
+          </button>
+          <nav className={`nav-links ${mobileOpen ? "mobile-open" : ""}`}>
+            <Link to="/" onClick={() => setMobileOpen(false)}>{t("nav.home")}</Link>
+            <Link to="/about" onClick={() => setMobileOpen(false)}>
+              {t("nav.about")}
+            </Link>
+            <Link to="/contact" onClick={() => setMobileOpen(false)}>
+              {t("nav.contact")}
+            </Link>
           </nav>
 
           <div className="logo">
-            <Link to="/">{t('home.hero.title')}</Link>
+            <Link to="/">{t("home.hero.title")}</Link>
           </div>
 
-          <div className="language-switch">
+          <div className="language-switch-container">
             <LanguageSwitch />
           </div>
         </header>
