@@ -85,7 +85,7 @@ function AppContent() {
   const { t } = useTranslation();
 
   return (
-    <Router basename="/bebosh-salon">
+    <Router basename="/bebosh-salon/">
       <div className="App">
         {/* Header */}
         <header className="header">
