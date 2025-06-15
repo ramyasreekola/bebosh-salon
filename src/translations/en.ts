@@ -7,7 +7,7 @@ export const en = {
   },
   home: {
     hero: {
-      title: 'Beboush Salon',
+      title: 'Bebosh Salon',
       subtitle: 'Gothenburg',
       description: 'Experience luxury, style, and the perfect look crafted just for you.',
       subDescription: 'We are the best salon for your favorite hairstyles and hair services. We give you the personal touch you are looking for.',
@@ -19,12 +19,12 @@ export const en = {
   },
   about: {
     hero: {
-      title: 'About Beboush Salon',
+      title: 'About Bebosh Salon',
       subtitle: 'Your Beauty Journey Starts Here'
     },
     story: {
       title: 'Our Story',
-      content: 'Beboush Salon was founded with a vision to create a space where beauty meets expertise. Our journey began with a simple idea: to provide exceptional hair and beauty services in a welcoming environment.'
+      content: 'Bebosh Salon was founded with a vision to create a space where beauty meets expertise. Our journey began with a simple idea: to provide exceptional hair and beauty services in a welcoming environment.'
     },
     values: {
       title: 'Our Values',
@@ -49,7 +49,7 @@ export const en = {
   contact: {
     hero: {
       title: 'Contact Us',
-      subtitle: 'Get in Touch with Beboush Salon'
+      subtitle: 'Get in Touch with Bebosh Salon'
     },
     info: {
       title: 'Contact Information',

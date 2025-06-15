@@ -124,7 +124,9 @@ a::after {
   justify-content: flex-start;
 }
 
-.nav-links a {
+.nav-links button {
+  background: none;
+  border: none;
   color: #fff;
   text-decoration: none;
   font-size: 1.1rem;
@@ -132,9 +134,11 @@ a::after {
   transition: color 0.3s ease;
   position: relative;
   padding: 0.5rem 0;
+  cursor: pointer;
+  font-family: inherit;
 }
 
-.nav-links a::after {
+.nav-links button::after {
   content: '';
   position: absolute;
   bottom: 0;
@@ -145,11 +149,11 @@ a::after {
   transition: width 0.3s ease;
 }
 
-.nav-links a:hover {
+.nav-links button:hover {
   color: var(--primary-gold);
 }
 
-.nav-links a:hover::after {
+.nav-links button:hover::after {
   width: 100%;
 }
 
@@ -868,15 +872,22 @@ a::after {
     transform: translateX(0);
   }
 
-  .nav-links a {
+  .nav-links button {
+    color: #403c3c;
     font-size: 1.25rem;
     padding: 0.5rem 1rem;
-    color: #403c3c;
-    text-decoration: none;
     display: block;
     width: 100%;
     text-align: center;
     white-space: nowrap;
+  }
+
+  .nav-links button::after {
+    display: none;
+  }
+
+  .nav-links button:hover {
+    background: rgba(0, 0, 0, 0.05);
   }
 
   .header {
@@ -929,4 +940,27 @@ a::after {
     text-align: center;
     font-size: 0.8rem;
   }
+}
+
+/* Add smooth scrolling to the whole page */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Update logo button styles */
+.logo button {
+  background: none;
+  border: none;
+  color: var(--primary-gold);
+  text-decoration: none;
+  font-size: 1.8rem;
+  font-weight: bold;
+  transition: color 0.3s ease;
+  cursor: pointer;
+  font-family: inherit;
+  padding: 0;
+}
+
+.logo button:hover {
+  color: #fff;
 }

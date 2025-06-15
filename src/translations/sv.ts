@@ -7,7 +7,7 @@ export const sv = {
   },
   home: {
     hero: {
-      title: 'Beboush Salon',
+      title: 'Bebosh Salon',
       subtitle: 'Göteborg',
       description: 'Upplev lyx, stil och den perfekta looken skräddarsydd för dig.',
       subDescription: 'Vi är den bästa salongen för dina favoritfrisyrer och hårservice. Vi ger dig den personliga touch du söker.',
@@ -19,12 +19,12 @@ export const sv = {
   },
   about: {
     hero: {
-      title: 'Om Beboush Salon',
+      title: 'Om Bebosh Salon',
       subtitle: 'Din skönhetsresa börjar här'
     },
     story: {
       title: 'Vår historia',
-      content: 'Beboush Salon grundades med en vision att skapa en plats där skönhet möter expertis. Vår resa började med en enkel idé: att erbjuda exceptionell hår- och skönhetsservice i en välkomnande miljö.'
+      content: 'Bebosh Salon grundades med en vision att skapa en plats där skönhet möter expertis. Vår resa började med en enkel idé: att erbjuda exceptionell hår- och skönhetsservice i en välkomnande miljö.'
     },
     values: {
       title: 'Våra värderingar',
@@ -49,7 +49,7 @@ export const sv = {
   contact: {
     hero: {
       title: 'Kontakta oss',
-      subtitle: 'Kontakta Beboush Salon'
+      subtitle: 'Kontakta Bebosh Salon'
     },
     info: {
       title: 'Kontaktinformation',
