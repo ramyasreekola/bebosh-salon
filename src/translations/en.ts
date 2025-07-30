@@ -5,6 +5,11 @@ export const en = {
     contact: 'Contact',
     book: 'Book Now'
   },
+  prices: {
+    title: 'Our Prices',
+    subtitle: 'Check out our prices for our services',
+    cta: 'Book a Time'
+  },
   home: {
     hero: {
       title: 'Bebosh Salon',
@@ -58,8 +63,8 @@ export const en = {
       email: 'Email',
       hours: 'Opening Hours',
       hoursContent: {
-        weekdays: 'Monday - Friday: 9:00 AM - 7:00 PM',
-        saturday: 'Saturday: 10:00 AM - 5:00 PM',
+        weekdays: 'Monday - Friday: 10:00 - 20:00',
+        saturday: 'Saturday: 10:00 - 17:00',
         sunday: 'Sunday: Closed'
       }
     },

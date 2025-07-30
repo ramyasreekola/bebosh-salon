@@ -79,6 +79,31 @@ a::after {
   background-color: #f0f0f0;
 }
 
+.home-logo {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.logo-placeholder {
+  width: 120px;
+  height: 120px;
+  background-color: #968b53;
+  border-radius: 50%;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  font-weight: bold;
+  color: #2f2e2e;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.logo-placeholder::before {
+  content: "B";
+}
+
 .section {
   width: 100%;
 }
@@ -117,7 +142,6 @@ a::after {
 }
 
 .nav-links {
-  flex: 1;
   display: flex;
   align-items: center;
   gap: 2rem;
@@ -188,9 +212,130 @@ a::after {
   transform: scale(1.05);
 }
 
+/* Price List Section */
+.price-list-section {
+  padding: 6rem 2rem;
+  background: linear-gradient(135deg, #2f2e2e 0%, #403c3c 100%);
+  text-align: center;
+  position: relative;
+}
+
+.price-list-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="50" cy="50" r="1" fill="%23ffffff" opacity="0.02"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
+  pointer-events: none;
+}
+
+.price-list-container {
+  position: relative;
+  z-index: 1;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.price-list-container h2 {
+  font-size: 3.5rem;
+  margin-bottom: 1.5rem;
+  color: #ffffff;
+  font-weight: 700;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  letter-spacing: 1px;
+}
+
+.price-list-text {
+  margin-bottom: 3rem;
+}
+
+.price-list-text p {
+  font-size: 1.3rem;
+  color: #e0e0e0;
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.6;
+  font-weight: 300;
+}
+
+.price-list-section .book-btn {
+  margin-bottom: 4rem;
+  padding: 1.2rem 2.5rem;
+  font-size: 1.1rem;
+  background: linear-gradient(45deg, #968b53, #b8a95a);
+  border: none;
+  color: #2f2e2e;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(150, 139, 83, 0.3);
+}
+
+.price-list-section .book-btn:hover {
+  background: linear-gradient(45deg, #b8a95a, #968b53);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(150, 139, 83, 0.4);
+}
+
+.price-list-section .book-btn:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 10px rgba(150, 139, 83, 0.3);
+}
+
+.price-list-image {
+  max-width: 900px;
+  margin: 0 auto;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+  border-radius: 16px;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  background: #ffffff;
+  padding: 2rem;
+}
+
+.price-list-image:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.4);
+}
+
+.price-list-image img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 8px;
+}
+
+/* Mobile responsiveness for price list */
+@media (max-width: 768px) {
+  .price-list-section {
+    padding: 4rem 1rem;
+  }
+  
+  .price-list-container h2 {
+    font-size: 2.5rem;
+  }
+  
+  .price-list-text p {
+    font-size: 1.1rem;
+  }
+  
+  .price-list-section .book-btn {
+    padding: 1rem 2rem;
+    font-size: 1rem;
+  }
+  
+  .price-list-image {
+    padding: 1rem;
+    margin: 0 1rem;
+  }
+}
+
 /*_____BIG TITLE_________*/
 .big-title {
-  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+  background: linear-gradient(rgba(0, 0, 0, 0.8 ), rgba(0, 0, 0, 0.8)),
               url('https://images.unsplash.com/photo-1585747860715-2ba37e788b70?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80');
   background-size: cover;
   background-position: center;
@@ -372,9 +517,8 @@ a::after {
 }
 
 .story-image img {
-  width: 100%;
-  height: 400px;
-  object-fit: cover;
+  width: 80%;
+  object-fit: contain;
   border-radius: 10px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }

@@ -5,9 +5,14 @@ export const sv = {
     contact: 'Kontakt',
     book: 'Boka nu'
   },
+  prices: {
+    title: 'Våra priser',
+    subtitle: 'Kolla in våra priser för våra tjänster',
+    cta: 'Boka tid'
+  },
   home: {
     hero: {
-      title: 'Bebosh Salon',
+      title: 'Bebosh Barbershop',
       subtitle: 'Göteborg',
       description: 'Upplev lyx, stil och den perfekta looken skräddarsydd för dig.',
       subDescription: 'Vi är den bästa salongen för dina favoritfrisyrer och hårservice. Vi ger dig den personliga touch du söker.',
@@ -58,7 +63,7 @@ export const sv = {
       email: 'E-post',
       hours: 'Öppettider',
       hoursContent: {
-        weekdays: 'Måndag - Fredag: 09:00 - 19:00',
+        weekdays: 'Måndag - Fredag: 10:00 - 20:00',
         saturday: 'Lördag: 10:00 - 17:00',
         sunday: 'Söndag: Stängt'
       }
