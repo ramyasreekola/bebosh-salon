@@ -3,6 +3,7 @@ export const sv = {
     home: 'Hem',
     about: 'Om oss',
     contact: 'Kontakt',
+    prices: 'Priser',
     book: 'Boka nu'
   },
   prices: {
