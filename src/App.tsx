@@ -129,7 +129,7 @@ function AppContent() {
                 <div className="story-image">
                   <img
                     alt="Modern men's barbershop interior"
-                    src="/bebosh-salon/images/beboshlogo.png"
+                    src="/bebosh-salon/images/history.jpeg"
                   />
                 </div>
               </div>
